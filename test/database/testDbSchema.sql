@@ -1,0 +1,67 @@
+USE whatswrongwithmeTEST_db;
+
+CREATE TABLE Doctors (
+	id INT NOT NULL AUTO_INCREMENT,
+	specialization VARCHAR(255),
+	betterDoctorId VARCHAR(255),
+	isActive TINYINT DEFAULT 1,
+	createdAt DATETIME NOT NULL,
+	updatedAt DATETIME NOT NULL,
+	UserId INT NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE Media (
+	id INT NOT NULL AUTO_INCREMENT,
+	filename VARCHAR(255),
+	location VARCHAR(255),
+	isActive TINYINT DEFAULT 1,
+	createdAt DATETIME NOT NULL,
+	updatedAt DATETIME NOT NULL,
+	PatientId INT NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE MedicalCharts (
+	id INT NOT NULL AUTO_INCREMENT,
+	comment TEXT,
+	isDrComment TINYINT NOT NULL,
+	isActive TINYINT DEFAULT 1,
+	createdAt DATETIME NOT NULL,
+	updatedAt DATETIME NOT NULL,
+	PatientId INT NOT NULL,
+	DoctorId INT NOT NULL,
+	MediumId INT,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE Patients (
+	id INT NOT NULL AUTO_INCREMENT,
+	biography TEXT,
+	insuranceProvider VARCHAR(255),
+	insuranceType VARCHAR(255),
+	isActive TINYINT DEFAULT 1,
+	createdAt DATETIME NOT NULL,
+	updatedAt DATETIME NOT NULL,
+	DoctorId INT,
+	UserId INT NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE Users (
+	id INT NOT NULL AUTO_INCREMENT,
+	firstName VARCHAR(255),
+	lastName VARCHAR(255),
+	dob DATETIME,
+	city VARCHAR(255),
+	state VARCHAR(255),
+	imgUrl VARCHAR(255),
+	googleId VARCHAR(255) NOT NULL,
+	token TEXT,
+	email VARCHAR(255) NOT NULL,
+	docPatient TINYINT NOT NULL DEFAULT 0,
+	isActive TINYINT DEFAULT 1,
+	createdAt DATETIME NOT NULL,
+	updatedAt DATETIME NOT NULL,
+	PRIMARY KEY(id)
+);

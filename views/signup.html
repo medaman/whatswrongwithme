@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Sign Up</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Google Sign In -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="638533152381-8qvq5kf5f7u2ra7aqbe0p5hkjcmj8gfu.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/style.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+
+  <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+
+<style type="text/css">
+body {
+    background: #F7F7F8;
+}
+</style>
+
+</head>
+<body>
+<img class="bg-graphic" src="assets/img/graphic.png">
+<div class="wrapper">
+    <div class="container">
+        <div class="row">                   
+            <div class="col-sm-offset-2 col-sm-8">
+
+                <form method="#" action="#">
+                    <div class="card login-card">
+
+                        <div class="header text-center">
+                            <p class="login-title">Sign Up</p>
+                        </div>
+
+                        <div class="content">
+                               
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        <input id="first-name" type="text" class="form-control" placeholder="First Name" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input id="last-name" type="text" class="form-control" placeholder="Last Name">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Date of Birth</label>
+                                        <input id="dob" type="date" class="form-control" value="1990-01-01">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input id="city" type="text" class="form-control" placeholder="City">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>State</label>
+                                        <input id="state" type="text" class="form-control" placeholder="State">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Email address</label>
+                                        <input id="email" type="email" class="form-control" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                   <label>Are you a doctor or a patient?</label>
+                                    <div class="form-check form-check-inline">
+                                       
+                                            <input id="patient" name="radio" type="radio" class="input-hidden" value="0" checked>
+                                            <label for="patient">
+                                                <img class="role-icon" src="assets/img/patient.png"/>
+                                                <p class="role">Patient</p>
+                                            </label>
+
+                                            <input id="doctor" name="radio" type="radio" class="input-hidden" value="1" checked>
+                                            <label for="doctor">
+                                                <img class="role-icon" src="assets/img/doctor.png"/>
+                                                <p class="role">Doctor</p>
+                                            </label>
+                                    </div>
+                            </div>
+
+                            <div class="row">
+                                
+                                </div>
+                            </div>
+                                  
+                            <a id="user-submit" class="text-center pull-right btn-login next-btn" href="#">Next</a>
+                            <div class="clearfix"></div>      
+                             
+                        </div> <!-- Content Closed -->
+                        <!-- <hr>
+                        <div class="footer">
+                            <a href="login">
+                                <div class="go-back-btn"><i class="fa fa-caret-left" aria-hidden="true"></i>
+                                Go Back</div>
+                            </a>
+                        </div> -->
+                    </div><!-- Card Closed -->
+                </form>
+            </div>                    
+        </div>
+    </div>
+</div>
+<div style="display:none" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+<div class="sign-out content">
+    <a onclick="signOut();" class="btn-block text-center btn-login-ghost" href="signup"><img class="google-icon" src="assets/img/google.png">Sign Out</a>
+</div>
+</body>
+
+    <!--   Core JS Files   -->
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
+
+	<!--  Charts Plugin -->
+	<script src="assets/js/chartist.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="assets/js/bootstrap-notify.js"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+	<script src="assets/js/light-bootstrap-dashboard.js"></script>
+
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src="assets/js/demo.js"></script>
+
+    <script src="assets/js/googleauth.js"></script>
+
+	<script src="assets/js/signup.js"></script>
+
+</html>

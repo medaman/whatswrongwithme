@@ -1,0 +1,17 @@
+    <div id="waveform"></div>
+    <div id="wave-spectrogram"></div>
+
+    {{#each data}}
+
+    <button class="playbutton" data_value={{this.dataValues.filename}}>PLAY {{this.dataValues.filename}}</button>
+
+    {{/each}}
+
+    <div>
+
+        <button id="start">Start Record</button>
+
+        <button id="stop">Stop Record</button>
+
+    </div>
+

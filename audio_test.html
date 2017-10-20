@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>WaveSurfer Test</title>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        
+
+</head>
+
+<body>
+
+    <div id="waveformGraphs"></div>
+
+    <div>
+
+        <button id="start">Start Record</button>
+
+        <button id="stop">Stop Record</button>
+
+    </div>
+
+
+</body>
+
+
+<!-- the follow javascript files are required -->
+<script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+
+<!-- for Edge/FF/Chrome/Opera/etc. getUserMedia support -->
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="https://cdn.webrtc-experiment.com/DetectRTC.js"> </script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.min.js"></script>
+
+<script>
+
+    var graphs = $("#waveformGraphs");
+
+var wavesurfer = WaveSurfer.create({
+
+    container: "#waveform",
+    waveColor: 'violet',
+    progressColor: 'purple'
+
+})
+
+wavesurfer.load("1507481993009.wav");
+
+wavesurfer.on('ready', function () {
+    wavesurfer.play();
+});
+
+</script>
+
+<script>
+
+var recorder;
+
+//var stream = navigator.mediaDevices.getUserMedia({audio: true, video:false,});
+
+//console.log(stream);
+
+$("#start").on("click", function(e){
+
+    console.log("clicked start");
+
+    navigator.mediaDevices.getUserMedia({audio: true, video:false,}).then(function(stream) {
+                    //successCallback(stream);
+
+                    //setVideoURL(stream, true);
+
+        recorder = new StereoAudioRecorder(stream, {
+            sampleRate: 44100,
+            bufferSize: 4096,
+            numberOfAudioChannels: 1
+        });
+
+        recorder.record();
+        console.log("start recording");
+
+    }).catch(function(error) {
+        
+        if(error && error.name === 'ConstraintNotSatisfiedError') {
+            console.log("something bad happened");
+        }
+
+        errorCallback(error);
+        });
+
+
+
+})
+
+$("#stop").on("click", function(e){
+
+    console.log("clicked stop");
+    recorder.stop(function(blob){
+
+
+        console.log(recorder);
+
+        var now = Date.now();
+        var fileName = now + ".wav";
+
+        if(!recorder) return alert('No recording found.');
+
+        /*
+        var file = new File([blob], fileName, {
+            type: "audio/wav"
+        });
+        */
+        //invokeSaveAsDialog(file, file.name);
+
+        //var fd = new FormData();
+        //fd.append('fname', fileName);
+        //fd.append("data", file);
+        
+        $.ajax({
+
+            type: 'POST',
+            url: '/',
+            data: blob,
+            processData: false,
+            contentType: false
+
+        }).done(function(data){
+
+            console.log(data);
+
+        })
+
+
+    })
+
+})
+
+
+</script>
+
+</html>
