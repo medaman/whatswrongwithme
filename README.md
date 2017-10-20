@@ -18,10 +18,10 @@ Whats Wrong With Me App is an online source for patients and doctors.
 
 # Team Members!
 
-* [Adam Husain] - https://github.com/medaman
-* [Natalie Ike] - https://github.com/natalieike
-* [Stanley Wang] - https://github.com/Eszypher58
-* [Chloe Chou] - https://github.com/chloechoudesign
+* [Adam Husain]
+* [Natalie Ike]
+* [Stanley Wang]
+* [Chloe Chou]
 
 # Tech
 
