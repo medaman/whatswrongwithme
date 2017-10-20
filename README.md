@@ -16,6 +16,13 @@ Whats Wrong With Me App is an online source for patients and doctors.
   - Have a one-to-one conversation with your chosen doctor
   - Doctor dashboard allows for easy access to patient files
 
+# Team Members!
+
+* [Adam Husain] - https://github.com/medaman
+* [Natalie Ike] - https://github.com/natalieike
+* [Stanley Wang] - https://github.com/Eszypher58
+* [Chloe Chou] - https://github.com/chloechoudesign
+
 # Tech
 
 Whats Wrong With Me App uses a number of open source technologies to work effectively:
@@ -73,7 +80,12 @@ http://secret-woodland-56466.herokuapp.com/
    [Sequelize]: <http://docs.sequelizejs.com/>
    [MySQL]: <https://www.mysql.com>
    [Google Auth]: <https://developers.google.com/identity/protocols/OAuth2>
+   
    [Better Doctor API]: <http://betterdoctor.com/developers/>
    [OAuth2]: <https://oauth.net/2/>
    
+   [Adam Husain]: <https://github.com/medaman>
+   [Natalie Ike]: <https://github.com/natalieike>
+   [Stanley Wang]: <https://github.com/Eszypher58>
+   [Chloe Chou]: <https://github.com/chloechoudesign>
    
